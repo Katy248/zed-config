@@ -7,12 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "icon_theme": "Bearded Icon Theme",
   "ui_font_size": 16,
   "format_on_save": "on",
   "autosave": "on_focus_change",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 17,
   "buffer_line_height": "standard",
+  "buffer_font_features": {
+    "calt": true
+  },
+  "active_pane_modifiers": {
+    "border_size": 2,
+    "inactive_opacity": 80
+  },
+  "current_line_highlight": "all",
+  "cursor_blink": true,
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light",
@@ -22,5 +32,34 @@
   "vim": {
     "use_system_clipboard": "always",
     "toggle_relative_line_numbers": true
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "csharp": true,
+    "python": true,
+    "go": true,
+    "meson": true
+  },
+  "scrollbar": {
+    "git_diff": false,
+    "search_results": true
+  },
+  "tab_bar": { "show_nav_history_buttons": false },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "errors",
+    "activate_on_close": "neighbour"
+  },
+  "terminal": {
+    "dock": "right"
+  },
+  "lsp": {},
+  "languages": {
+    "CSharp": {
+      "language_servers": ["omnisharp-roslyn"]
+    }
   }
 }
