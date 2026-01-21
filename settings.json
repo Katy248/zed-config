@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "icon_theme": "Bearded Icon Theme",
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "ui_font_size": 16,
   "ui_font_family": "JetBrains Mono",
   "format_on_save": "on",
@@ -17,6 +17,15 @@
   "buffer_line_height": "standard",
   "buffer_font_features": {
     "calt": true,
+  },
+  "diagnostics": {
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+    },
+    "inline": {
+      "enabled": true,
+    },
   },
   "active_pane_modifiers": {
     "border_size": 2,
@@ -47,7 +56,7 @@
   "tabs": {
     "file_icons": true,
     "git_status": true,
-    "show_diagnostics": "errors",
+    "show_diagnostics": "all",
     "activate_on_close": "neighbour",
   },
   "terminal": {

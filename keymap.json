@@ -9,9 +9,6 @@
   {
     "bindings": {
       "cmd-1": null,
-      "cmd-2": null,
-      "cmd-3": null,
-      "cmd-4": null,
       "cmd-5": null,
       "cmd-6": null,
       "cmd-7": null,
@@ -25,12 +22,18 @@
       "cmd-3": "terminal_panel::Toggle",
       "alt-4": "git_panel::ToggleFocus",
       "cmd-4": "git_panel::ToggleFocus",
-      "space e": "project_panel::ToggleFocus",
 
       "F4": ["task::Spawn", { "task_name": "build", "reveal_target": "dock" }],
       "F5": ["task::Spawn", { "task_name": "run", "reveal_target": "dock" }],
       "F6": ["task::Spawn", { "task_name": "test", "reveal_target": "dock" }],
       "shift-F5": "task::Spawn",
+    },
+  },
+  {
+    "context": "Editor && vim_mode != insert",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+      "space /": "editor::ToggleComments",
     },
   },
   {
@@ -53,11 +56,12 @@
     "bindings": {
       "alt-3": "terminal_panel::Toggle",
       "cmd-3": "terminal_panel::Toggle",
-      "ctrl-v": ["terminal::SendKeystroke", "ctrl-shift-v"],
-      "ctrl-w": ["workspace::SendKeystrokes", "ctrl-shift-w"],
-      "space q": ["workspace::SendKeystrokes", "ctrl-shift-w"],
+      // "ctrl-v": ["terminal::SendKeystroke", "ctrl-shift-v"],
+      // "ctrl-w": ["workspace::SendKeystrokes", "ctrl-shift-w"],
+      // "space q": ["workspace::SendKeystrokes", "ctrl-shift-w"],
     },
   },
+
   {
     "context": "vim_mode == normal",
     "bindings": {
@@ -66,7 +70,6 @@
       "space r r": "editor::Rename",
       "ctrl-v": "vim::Paste",
       "ctrl-shift-v": "vim::Paste",
-      "space /": "editor::ToggleComments",
       "space c f": "editor::Format",
       "space g g": "git_panel::ToggleFocus",
     },
