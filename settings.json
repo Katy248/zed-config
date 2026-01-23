@@ -17,7 +17,9 @@
   "buffer_line_height": "standard",
   "buffer_font_features": {
     "calt": true,
+    "cv01": 7,
   },
+  "close_on_file_delete": true,
   "diagnostics": {
     "include_warnings": true,
     "lsp_pull_diagnostics": {
@@ -27,10 +29,7 @@
       "enabled": true,
     },
   },
-  "active_pane_modifiers": {
-    "border_size": 2,
-    "inactive_opacity": 80,
-  },
+  // "bottom_dock_layout": "right_aligned",
   "current_line_highlight": "all",
   "cursor_blink": true,
   "theme": {
