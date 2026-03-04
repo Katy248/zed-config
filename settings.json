@@ -46,6 +46,9 @@
     "html": true,
     "dockerfile": true,
     "docker-compose": true,
+    "colored-zed-icons-theme": true,
+    "sql": true,
+    "editorconfig": true,
   },
   "scrollbar": {
     "git_diff": true,
@@ -65,6 +68,14 @@
   "languages": {
     "CSharp": {
       "language_servers": ["omnisharp-roslyn"],
+    },
+    "Vala": {
+      "formatter": {
+        "external": {
+          "command": "uncrustify",
+          "arguments": ["-c=uncrustify.cfg", "-l=vala"],
+        },
+      },
     },
   },
 }
