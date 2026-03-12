@@ -64,7 +64,24 @@
   "terminal": {
     "dock": "bottom",
   },
-  "lsp": {},
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "lsp": {
+    // "gopls": {
+    //   "initialization_options": {
+    //     "hints": {
+    //       "assignVariableTypes": true,
+    //       "compositeLiteralFields": true,
+    //       "compositeLiteralTypes": true,
+    //       "constantValues": true,
+    //       "functionTypeParameters": true,
+    //       "parameterNames": true,
+    //       "rangeVariableTypes": true,
+    //     },
+    //   },
+    // },
+  },
   "languages": {
     "CSharp": {
       "language_servers": ["omnisharp-roslyn"],
