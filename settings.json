@@ -7,6 +7,54 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "default_profile": "minimal",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "openrouter/free",
+      "enable_thinking": true,
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "ssh_connections": [
+    {
+      "host": "79.174.80.177",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/root/renome-cms"],
+        },
+        {
+          "paths": ["/root/server"],
+        },
+      ],
+    },
+    {
+      "host": "130.49.148.201",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/root/sir-rabbit-cms"],
+        },
+      ],
+    },
+  ],
   "icon_theme": "Colored Zed Icons Theme Dark",
   "ui_font_size": 16,
   "ui_font_family": "JetBrainsMono Nerd Font",
@@ -68,21 +116,23 @@
     "enabled": true,
   },
   "lsp": {
-    // "gopls": {
-    //   "initialization_options": {
-    //     "hints": {
-    //       "assignVariableTypes": true,
-    //       "compositeLiteralFields": true,
-    //       "compositeLiteralTypes": true,
-    //       "constantValues": true,
-    //       "functionTypeParameters": true,
-    //       "parameterNames": true,
-    //       "rangeVariableTypes": true,
-    //     },
-    //   },
-    // },
+    "golangci-lint": {
+      "initialization_options": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--fix",
+          "--output.json.path=stdout",
+          "--show-stats=false",
+          "--output.text.path=",
+        ],
+      },
+    },
   },
   "languages": {
+    "Go": {
+      "language_servers": ["gopls", "golangci-lint"],
+    },
     "CSharp": {
       "language_servers": ["omnisharp-roslyn"],
     },
