@@ -9,12 +9,20 @@
 {
   "project_panel": {
     "dock": "left",
-  },
-  "outline_panel": {
-    "dock": "left",
+    "auto_fold_dirs": false,
+    "diagnostic_badges": true,
   },
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "right",
+    "fallback_branch_name": "main",
+    "show_count_badge": true,
+  },
+  "outline_panel": {
+    "dock": "right",
+    "button": false,
   },
   "agent": {
     "default_profile": "minimal",
@@ -26,9 +34,6 @@
     "dock": "right",
     "favorite_models": [],
     "model_parameters": [],
-  },
-  "git_panel": {
-    "dock": "left",
   },
   "ssh_connections": [
     {
@@ -97,6 +102,7 @@
     "colored-zed-icons-theme": true,
     "sql": true,
     "editorconfig": true,
+    "golangci-lint": true,
   },
   "scrollbar": {
     "git_diff": true,
