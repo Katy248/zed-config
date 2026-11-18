@@ -20,13 +20,15 @@
       "cmd-2": "project_panel::ToggleFocus",
       "alt-3": "terminal_panel::Toggle",
       "cmd-3": "terminal_panel::Toggle",
-      "alt-4": "git_panel::ToggleFocus",
-      "cmd-4": "git_panel::ToggleFocus",
+      "alt-4": "git_panel::Toggle",
+      "cmd-4": "git_panel::Toggle",
 
       "F4": ["task::Spawn", { "task_name": "build", "reveal_target": "dock" }],
       "F5": ["task::Spawn", { "task_name": "run", "reveal_target": "dock" }],
       "F6": ["task::Spawn", { "task_name": "test", "reveal_target": "dock" }],
       "shift-F5": "task::Spawn",
+
+      "shift-space": "editor::ShowCompletions",
     },
   },
   {
@@ -72,6 +74,7 @@
       "ctrl-shift-v": "vim::Paste",
       "space c f": "editor::Format",
       "space g g": "git_panel::ToggleFocus",
+      "U": "editor::Redo",
     },
   },
 ]

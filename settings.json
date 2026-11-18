@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "proxy": "",
+  "language_models": {
+    "llama.cpp": {
+      "context_window": 32000,
+      "api_url": "http://localhost:9931",
+    },
+  },
+  "cli_default_open_behavior": "new_window",
+  "diff_view_style": "split",
   "project_panel": {
     "dock": "left",
     "auto_fold_dirs": false,
@@ -16,6 +25,8 @@
     "dock": "right",
   },
   "git_panel": {
+    "group_by": "staging",
+    "tree_view": true,
     "dock": "right",
     "fallback_branch_name": "main",
     "show_count_badge": true,
@@ -25,10 +36,46 @@
     "button": false,
   },
   "agent": {
-    "default_profile": "minimal",
+    "sandbox_permissions": {
+      "network_hosts": [
+        "cheatsheetseries.owasp.org",
+        "google.github.io",
+        "raw.githubusercontent.com",
+      ],
+    },
+    "tool_permissions": {
+      "tools": {
+        "delete_path": {
+          "default": "allow"
+        },
+        "create_directory": {
+          "default": "allow"
+        },
+        "terminal": {
+          "default": "confirm",
+          "always_allow": [
+            { "pattern": "^go\\s+(build|test|doc|get)" },
+            { "pattern": "^gofmt*" },
+            { "pattern": "^npm\\s+run\\s+lint" },
+            { "pattern": "^npm\\s+run\\s+type-check" },
+            {
+              "pattern": "^git\\s+--no-pager\\s+diff",
+            },
+            {
+              "pattern": "^git\\s+--no-optional-locks\\s+status",
+            },
+            {
+              "pattern": "*go\\s+test*",
+            },
+          ],
+        },
+      },
+    },
+    "default_profile": "write",
     "default_model": {
+      "effort": "low",
       "provider": "openrouter",
-      "model": "openrouter/free",
+      "model": "z-ai/glm-5.3-flashx",
       "enable_thinking": true,
     },
     "dock": "right",
@@ -56,6 +103,16 @@
       "projects": [
         {
           "paths": ["/root/sir-rabbit-cms"],
+        },
+      ],
+    },
+    {
+      "host": "ship-monitor.ru",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/root/frontend"],
         },
       ],
     },
@@ -108,7 +165,11 @@
     "git_diff": true,
     "search_results": true,
   },
-  "tab_bar": { "show_nav_history_buttons": false },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_pinned_tabs_in_separate_row": true,
+    "show": false,
+  },
   "tabs": {
     "file_icons": true,
     "git_status": true,
@@ -116,10 +177,14 @@
     "activate_on_close": "neighbour",
   },
   "terminal": {
+    "shell": { "program": "/opt/homebrew/bin/fish" },
     "dock": "bottom",
+    "copy_on_select": true,
   },
   "inlay_hints": {
     "enabled": true,
+    "show_parameter_hints": false,
+    "show_background": true,
   },
   "lsp": {
     "golangci-lint": {
@@ -132,6 +197,17 @@
           "--show-stats=false",
           "--output.text.path=",
         ],
+      },
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings go here
+          "lineLength": 80,
+          "lint": {
+            "extendSelect": ["I"],
+          },
+        },
       },
     },
   },
@@ -149,6 +225,9 @@
           "arguments": ["-c=uncrustify.cfg", "-l=vala"],
         },
       },
+    },
+    "Proto": {
+      "language_servers": ["protobuf-language-server"],
     },
   },
 }
